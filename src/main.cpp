@@ -6,5 +6,6 @@
 int main(void)
 {
     HashTable test;
+    test.printBooks();
     return 0;
 }
