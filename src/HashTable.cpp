@@ -8,15 +8,15 @@
 //Constructor
 HashTable::HashTable()
 {
-    this->loadFactor = 0;
-    this->_numberOfSlots = 0;
+    this->_loadFactor = 0;
     this->_totalBooks = 0;
+    this->_totalSlots = 0;
 }
 
 
 bool HashTable::isEmpty()
 {
-    return this->_totalBooks == 0;
+    return this->_totalBooks;
 }
 
 
@@ -33,20 +33,32 @@ void HashTable::printBooks()
     //iterate over the table1 and acess each list contents
     for(int i = 0; i < sizeOfTable1; i++)
     {
-        for(std::list<book>::iterator it = this->table1[i].begin(); it != this->table1[i].end(); it++)
-        {
+        
             /*TO DO OVERLOAD std::ostream to customize the format of printing the book*/
-            //std::cout << it;
-        }
+            //std::cout << table1[i];
+        
     }
 
     //iterator over table2 and do the same process as above
     for(int i = 0; i < sizeOfTable2; i++)
     {
-        for(std::list<book>::iterator it = this->table2[i].begin(); it != this->table2[i].end(); it++)
-        {
+
             /*TO DO OVERLOAD std::ostream to customize the format of printing the book*/
-            //std::cout << it;
-        }
+            //std::cout << table2[i];
     }
+}
+
+
+void HashTable::calculateLoadFactor()
+{
+
+    this->_loadFactor = static_cast<double>(this->_totalBooks)/this->_totalSlots;
+    
+}
+
+
+size_t HashTable::calculateSlots()
+{
+    this->_totalSlots = this->table1.size() + this->table2.size();
+    return this->_totalSlots;
 }

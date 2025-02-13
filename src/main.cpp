@@ -5,6 +5,9 @@
 
 
 int main(void)
-{
+{   
+    HashTable test;
+    double load = test.calculateLoadFactor();
+    std::cout << "load factor = " << load << std::endl;
     return 0;
 }

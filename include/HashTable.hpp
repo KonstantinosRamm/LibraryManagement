@@ -3,6 +3,7 @@
 #include <list>
 #include <vector>
 #include <array>
+#include <optional>
 
 /**
  * @class HashTable
@@ -66,18 +67,31 @@ class HashTable
         size_t getNumberOfBooks();
     /**
      * @brief Calculates the load factor of the hash table.
-     * @return The current load factor of the hash table, calculated as:
+     * The current load factor of the hash table, calculated as:
      *         _totalBooks / _numberOfSlots.
+     * @return _loadFactor
      */
-        float calculateLoadFactor();
+        double calculateLoadFactor();
+
+    /**
+     * @brief Calculates the total number of slots
+     * @return _totalSlots
+     */
+        size_t calculateSlots();
+
+
     private:
         // Declaring the hash table as a vector of lists to store books with chaining for collision handling.
         // we have 2 hash tables so we can apply the cuckoo hashing
-        std::vector<std::list<book>> table1;
-        std::vector<std::list<book>> table2;
+        // It is a more simplified version of hash table .since it doesnt use linked lists for chaining
+        // the reason behind that is because cuckoo hashing ensures that no chaining occurs so it would 
+        //be over kill to add linked lists inside vector
+        //std::optional added for memory safety
+        std::vector<std::optional<book>> table1;
+        std::vector<std::optional<book>> table2;
         size_t _totalBooks;
-        size_t _numberOfSlots;
-        double loadFactor;
+        double _loadFactor;
+        size_t _totalSlots;
 
 
 
