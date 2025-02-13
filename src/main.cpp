@@ -1,11 +1,10 @@
 #include "book.hpp"
 #include "HashTable.hpp"
+#include "cuckoo.hpp"
 #include <iostream>
 
 
 int main(void)
 {
-    HashTable test;
-    test.printBooks();
     return 0;
 }
