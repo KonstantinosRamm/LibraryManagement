@@ -2,7 +2,7 @@
 #include <string>
 
 
-typedef struct book
+struct book
 {
     std::string Title;
     std::string Author;
@@ -11,4 +11,4 @@ typedef struct book
     std::string year;
     std::string ISBN;
 
-}book;
+};

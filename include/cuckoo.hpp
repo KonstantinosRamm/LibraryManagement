@@ -34,11 +34,12 @@ class cuckooHash{
      * @param book the book to be hashed
      * return true if operation suceeded or false if the tables need resize
      */
-    bool insert(std::vector<std::optional <book>>& table1,std::vector<std::optional<book>>& table2,const book &Book);
+    static bool insert(std::vector<std::optional <book>>& table1,std::vector<std::optional<book>>& table2,const book &Book);
     private:
     /**
      * @brief a temporary vector used to store the hashed indexes 
      */
-        std::vector<size_t> hashed_indexes;
+        static std::vector<size_t> visited_table1;
+        static std::vector<size_t> visited_table2;
     
 };
