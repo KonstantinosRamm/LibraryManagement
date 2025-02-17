@@ -64,11 +64,41 @@
       <packagedElement xmi:type="uml:Class" xmi:id="u2LTO0dxgAJCk" name="size_t"/>
       <packagedElement xmi:type="uml:Class" xmi:id="uEb7mnd4N3aKV" name="vector"/>
       <packagedElement xmi:type="uml:Class" xmi:id="u6yHMklaQV1C9" name="const book&amp;"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="uDKwNvL4nqLn0" name="cuckooHash">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="uDKDVezBN8HuN" name="visited_table1" comment="a static vector used on cuckoo hash to keep track of the visited indices in order to detect cycles on hash table 1" visibility="private" type="uEb7mnd4N3aKV"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="ueTBOeIkKgSpp" name="visited_table2" comment="a static vector used on cuckoo hash to keep track of the visited indices in order to detect cycles on hash table 2" visibility="private" type="uEb7mnd4N3aKV"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="u7TzHirA9OaNe" name="hash1">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="us0sttOiLPROh" type="u2LTO0dxgAJCk" direction="return"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="uue40Hy0TdYx8" name="bookName" comment="The string to be hashed for hashtable 1 " visibility="private" type="uozc22MLpG2wR" value=""/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="ujNENWaaPjSD8" name="size" comment="The size of hash table 1 (used on the hashing process)" visibility="private" type="u2LTO0dxgAJCk" value=""/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="ujHD29lB0bMs0" name="hash2">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="u1HFru5QflGtk" type="u2LTO0dxgAJCk" direction="return"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="uZdRbhWhWG69m" name="size" comment="The size of hash table 2 (used on the hashing process)" visibility="private" type="u2LTO0dxgAJCk" value=""/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="uVEOwfH9HnvV8" name="bookName" comment="the string to be hashed into hash table 2" visibility="private" type="u2LTO0dxgAJCk" value=""/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="uxaYnx9mGLwff" name="insert" ownerScope="classifier">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="u2FhJYeFZ7SHz" type="uO0SD7bnloba4" direction="return"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="ud6Lecb4AIs8E" name="table1" comment="the first hash table to be used for cuckoo hashing" visibility="private" type="uEb7mnd4N3aKV" value=""/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="uuBwbTRlf7UxV" name="table2" comment="the second hash table to be used for cuckoo hashing" visibility="private" type="uEb7mnd4N3aKV" value=""/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="uNeGcc2gi7jra" name="Book" comment="the book to be hashed " visibility="private" type="uDErjhQVjlikF" value=""/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="uDErjhQVjlikF" name="book">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="ugRDvoYL2gl9P" name="Title" type="uozc22MLpG2wR"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="ucVXa5sOdZSaE" name="Author" type="uozc22MLpG2wR"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="uIdx1KwECXwqY" name="Publisher" type="uozc22MLpG2wR"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="uvhEQ6iz63b0P" name="Genre" type="uozc22MLpG2wR"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="uMALi1N0wtbSl" name="Year" type="uozc22MLpG2wR"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="uxVZv9sJ4rSZq" name="ISBN" type="uozc22MLpG2wR"/>
+      </packagedElement>
       <xmi:Extension extender="umbrello">
         <diagrams resolution="96">
-          <diagram xmi.id="uAZCnYFkaN1cg" name="LibraryManagementSystem" type="1" documentation="" backgroundcolor="#ffffff" fillcolor="#ffffc0" font="Cascadia Code Bold,10,-1,5,50,0,0,0,0,0" griddotcolor="#d3d3d3" linecolor="#990000" linewidth="0" textcolor="#000000" usefillcolor="1" showattribassocs="1" showatts="1" showattsig="1" showops="1" showopsig="1" showpackage="1" showpubliconly="0" showscope="1" showstereotype="2" localid="-1" showgrid="0" snapgrid="0" snapcsgrid="0" snapx="25" snapy="25" zoom="130" canvasheight="800" canvaswidth="1100" isopen="1">
+          <diagram xmi.id="uAZCnYFkaN1cg" name="LibraryManagementSystem" type="1" documentation="" backgroundcolor="#ffffff" fillcolor="#ffffc0" font="Cascadia Code Bold,10,-1,5,50,0,0,0,0,0" griddotcolor="#d3d3d3" linecolor="#990000" linewidth="0" textcolor="#000000" usefillcolor="1" showattribassocs="1" showatts="1" showattsig="1" showops="1" showopsig="1" showpackage="1" showpubliconly="0" showscope="1" showstereotype="2" localid="-1" showgrid="0" snapgrid="0" snapcsgrid="0" snapx="25" snapy="25" zoom="98.2987" canvasheight="800" canvaswidth="1100" isopen="1">
             <widgets>
-              <classwidget xmi.id="uHr7DglCqVlwo" localid="uT2Svk5ZvzpXi" textcolor="#000000" linecolor="#000000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="0" usesdiagramusefillcolor="0" fillcolor="#99c1f1" font="Cascadia Code Bold,10,-1,5,50,0,0,0,0,0" autoresize="0" x="138.142" y="134.736" width="289.099" height="363.624" isinstance="0" showstereotype="2" showoperations="1" showpubliconly="0" showopsigs="601" showpackage="1" showscope="1" showattributes="1" showattsigs="601"/>
+              <classwidget xmi.id="uDKwNvL4nqLn0" localid="uGMSTIeL5pbcD" textcolor="#000000" linecolor="#000000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="0" usesdiagramusefillcolor="0" fillcolor="#4e888d" font="Cascadia Code Bold,10,-1,5,50,0,0,0,0,0" autoresize="0" x="636.835" y="130.215" width="355.535" height="367.642" isinstance="0" showstereotype="2" showoperations="1" showpubliconly="0" showopsigs="601" showpackage="1" showscope="1" showattributes="1" showattsigs="601"/>
+              <classwidget xmi.id="uHr7DglCqVlwo" localid="uT2Svk5ZvzpXi" textcolor="#000000" linecolor="#000000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="0" usesdiagramusefillcolor="0" fillcolor="#99c1f1" font="Cascadia Code Bold,10,-1,5,50,0,0,0,0,0" autoresize="0" x="138.142" y="134.736" width="353" height="363.624" isinstance="0" showstereotype="2" showoperations="1" showpubliconly="0" showopsigs="601" showpackage="1" showscope="1" showattributes="1" showattsigs="601"/>
+              <classwidget xmi.id="uDErjhQVjlikF" localid="uHAfQJyAhNWym" textcolor="#000000" linecolor="#000000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="0" usesdiagramusefillcolor="0" fillcolor="#f6d32d" font="Cascadia Code Bold,10,-1,5,50,0,0,0,0,0" autoresize="0" x="428.287" y="562.571" width="364.452" height="199.787" isinstance="0" showstereotype="2" showoperations="1" showpubliconly="0" showopsigs="601" showpackage="1" showscope="1" showattributes="1" showattsigs="601"/>
             </widgets>
             <messages/>
             <associations/>
@@ -82,18 +112,35 @@
     <packagedElement xmi:type="uml:Model" xmi:id="Entity_Relationship_Model" name="Entity Relationship Model"/>
   </uml:Model>
   <xmi:Extension extender="umbrello">
-    <docsettings viewid="uAZCnYFkaN1cg" documentation="" uniqueid="umdxGFx9gMZqB"/>
+    <docsettings viewid="uAZCnYFkaN1cg" documentation="" uniqueid="uxVZv9sJ4rSZq"/>
     <listview>
       <listitem id="Views" type="800" open="1">
         <listitem id="Component_View" type="821" open="1"/>
         <listitem id="Deployment_View" type="827" open="1"/>
         <listitem id="Entity_Relationship_Model" type="836" open="1"/>
         <listitem id="Logical_View" type="801" open="1">
+          <listitem id="uDErjhQVjlikF" type="813" open="1">
+            <listitem id="ucVXa5sOdZSaE" type="814" open="0"/>
+            <listitem id="uvhEQ6iz63b0P" type="814" open="0"/>
+            <listitem id="uxVZv9sJ4rSZq" type="814" open="0"/>
+            <listitem id="uIdx1KwECXwqY" type="814" open="0"/>
+            <listitem id="ugRDvoYL2gl9P" type="814" open="0"/>
+            <listitem id="uMALi1N0wtbSl" type="814" open="0"/>
+          </listitem>
           <listitem id="u6yHMklaQV1C9" type="813" open="1"/>
+          <listitem id="uDKwNvL4nqLn0" type="813" open="1">
+            <listitem id="u7TzHirA9OaNe" type="815" open="0"/>
+            <listitem id="ujHD29lB0bMs0" type="815" open="0"/>
+            <listitem id="uxaYnx9mGLwff" type="815" open="0"/>
+            <listitem id="uDKDVezBN8HuN" type="814" open="0"/>
+            <listitem id="ueTBOeIkKgSpp" type="814" open="0"/>
+          </listitem>
           <listitem id="Datatypes" type="830" open="0">
             <listitem id="uO0SD7bnloba4" type="829" open="0"/>
             <listitem id="ui1SXjAmbG0h8" type="829" open="0"/>
             <listitem id="u0zqKUjtV1uJs" type="829" open="0"/>
+            <listitem id="upEgfR0djj4oe" type="829" open="0"/>
+            <listitem id="uYXoNF3m2Xu8V" type="829" open="0"/>
             <listitem id="uHfhydah6VzTK" type="829" open="0"/>
             <listitem id="uGlxRIhgeOVVT" type="829" open="0"/>
             <listitem id="ubJtwsHLiu95t" type="829" open="0"/>
