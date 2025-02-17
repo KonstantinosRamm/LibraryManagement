@@ -79,6 +79,19 @@ class HashTable
      */
         size_t calculateSlots();
 
+    /**
+     * @brief getter for hashtables 
+     * @return the hash table declared as a vector
+     */
+         std::vector<book>& getTable1();
+
+    /**
+     * @brief getter for hashtables 
+     * @return the hash table declared as a vector
+     */
+     std::vector<book>& getTable2();
+
+     
 
     private:
         // Declaring the hash table as a vector of lists to store books with chaining for collision handling.

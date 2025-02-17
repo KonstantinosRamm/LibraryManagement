@@ -49,11 +49,22 @@ void HashTable::printBooks()
 }
 
 
-void HashTable::calculateLoadFactor()
+double HashTable::calculateLoadFactor()
 {
+        //ensure not to division with 0
 
-    this->_loadFactor = static_cast<double>(this->_totalBooks)/this->_totalSlots;
+    if(this->_totalSlots == 0)
+    {
+        this->_loadFactor = 0;
+
+    }
+    else
+    {
+        this->_loadFactor = static_cast<double>(this->_totalBooks)/this->_totalSlots;
     
+    }
+
+    return this->_loadFactor;
 }
 
 

@@ -8,7 +8,7 @@ typedef struct book
     std::string Author;
     std::string Publisher;
     std::string Genre;
-    int year;
-    int ISBN;
+    std::string year;
+    std::string ISBN;
 
 }book;
