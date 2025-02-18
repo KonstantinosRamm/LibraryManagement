@@ -4,177 +4,261 @@
   <uml:Model xmi:id="m1" name="UML Model">
     <packagedElement xmi:type="uml:Stereotype" xmi:id="folder" name="folder"/>
     <packagedElement xmi:type="uml:Stereotype" xmi:id="dataType" name="dataType"/>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="class-or-package" name="class-or-package"/>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="constructor" name="constructor"/>
     <packagedElement xmi:type="uml:Model" xmi:id="Logical_View" name="Logical View">
       <uml:Package xmi:id="Datatypes" name="Datatypes" stereotype="folder">
-        <packagedElement xmi:type="uml:DataType" xmi:id="ui1SXjAmbG0h8" name="char" stereotype="dataType"/>
-        <packagedElement xmi:type="uml:DataType" xmi:id="uYXoNF3m2Xu8V" name="int" stereotype="dataType"/>
-        <packagedElement xmi:type="uml:DataType" xmi:id="upEgfR0djj4oe" name="float" stereotype="dataType"/>
-        <packagedElement xmi:type="uml:DataType" xmi:id="u0zqKUjtV1uJs" name="double" stereotype="dataType"/>
-        <packagedElement xmi:type="uml:DataType" xmi:id="uO0SD7bnloba4" name="bool" stereotype="dataType"/>
-        <packagedElement xmi:type="uml:DataType" xmi:id="uozc22MLpG2wR" name="string" stereotype="dataType"/>
-        <packagedElement xmi:type="uml:DataType" xmi:id="uO7DVkAJyjux0" name="unsigned char" stereotype="dataType"/>
-        <packagedElement xmi:type="uml:DataType" xmi:id="uADGRSrGUqBE8" name="signed char" stereotype="dataType"/>
-        <packagedElement xmi:type="uml:DataType" xmi:id="u5z5pmsi36igy" name="unsigned int" stereotype="dataType"/>
-        <packagedElement xmi:type="uml:DataType" xmi:id="uI0KQUeI7kfQe" name="signed int" stereotype="dataType"/>
-        <packagedElement xmi:type="uml:DataType" xmi:id="ubJtwsHLiu95t" name="short int" stereotype="dataType"/>
-        <packagedElement xmi:type="uml:DataType" xmi:id="um4cjrPqAFjBs" name="unsigned short int" stereotype="dataType"/>
-        <packagedElement xmi:type="uml:DataType" xmi:id="uGUQEt51hhDxe" name="signed short int" stereotype="dataType"/>
-        <packagedElement xmi:type="uml:DataType" xmi:id="uGlxRIhgeOVVT" name="long int" stereotype="dataType"/>
-        <packagedElement xmi:type="uml:DataType" xmi:id="utNrRChBWF10z" name="signed long int" stereotype="dataType"/>
-        <packagedElement xmi:type="uml:DataType" xmi:id="uafrHKwRsafEF" name="unsigned long int" stereotype="dataType"/>
-        <packagedElement xmi:type="uml:DataType" xmi:id="uHfhydah6VzTK" name="long double" stereotype="dataType"/>
-        <packagedElement xmi:type="uml:DataType" xmi:id="unxVR2eCfCQFf" name="wchar_t" stereotype="dataType"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="uuqYtiGbgVyDn" name="char" stereotype="dataType"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="uX5zG4WSXmsXk" name="int" stereotype="dataType"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="uMzr9wdptZE0Z" name="float" stereotype="dataType"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="uwULxdZ8d8Vob" name="double" stereotype="dataType"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="uvAt6nWjgw866" name="bool" stereotype="dataType"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="uC6bkHy6sRQWE" name="string" stereotype="dataType"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="uJhzanccLmKO2" name="unsigned char" stereotype="dataType"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="uDgSXV8Vbzmfz" name="signed char" stereotype="dataType"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="uNPkIBTEwIpf3" name="unsigned int" stereotype="dataType"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="uMS7Q1FXbY3kt" name="signed int" stereotype="dataType"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="uY6Meat9ymuMf" name="short int" stereotype="dataType"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="ufVjBgA6ii9bg" name="unsigned short int" stereotype="dataType"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="uBjaTBtSPgYKC" name="signed short int" stereotype="dataType"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="uiEPOQm7bP26v" name="long int" stereotype="dataType"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="uRq15hAInvUMO" name="signed long int" stereotype="dataType"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="u6FloXuw2MCVd" name="unsigned long int" stereotype="dataType"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="uMRRHZIhDX7ya" name="long double" stereotype="dataType"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="uMeD9MkOgZ7Qq" name="wchar_t" stereotype="dataType"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="uZg1YTbkE8udw" name="const std::string&amp;" stereotype="dataType" elementReference="uC6bkHy6sRQWE"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="u8urmRaqstfXs" name="std::vector&lt; std :: optional &lt; book &gt; &gt;&amp;" stereotype="dataType" elementReference="um0mP9VzPOzzh"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="urKptnhr2x8OZ" name="const book&amp;" stereotype="dataType" elementReference="uRiPUuoFG68zv"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="uwfhmEf1PCA5p" name="std::vector&lt; size_t &gt;" stereotype="dataType" elementReference="um0mP9VzPOzzh"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="uR29rNtPiVXR3" name="std::vector&lt; book &gt;&amp;" stereotype="dataType" elementReference="um0mP9VzPOzzh"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="uMIyaobOtxtlg" name="std::vector&lt; std :: optional &lt; book &gt; &gt;" stereotype="dataType" elementReference="um0mP9VzPOzzh"/>
       </uml:Package>
-      <packagedElement xmi:type="uml:Class" xmi:id="uHr7DglCqVlwo" name="HashTable" comment="A class used to store the books in it using 2 hash tables implemented as simple vectors since we are using cuckoo hashing to avoid collisions ">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="ucuymSgMDs4Sv" name="_totalBooks" comment="used to count total number of books stored in the hash tables" visibility="private" type="u2LTO0dxgAJCk"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="ugagUsH4GSi14" name="_totalSlots" visibility="private" type="u2LTO0dxgAJCk"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="uRAMAuQJzXLob" name="table1" comment="hash table number 1 . the reason we have 2 hash tables is to apply cuckoo hashing and avoid collisions as much as possible" visibility="private" type="uEb7mnd4N3aKV"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="uYpyPNeoEhdeo" name="table2" visibility="private" type="uEb7mnd4N3aKV"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="u5vgChRsjtsZw" name="_loadFactor" visibility="private" type="u0zqKUjtV1uJs"/>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="uDXJFArh9f3EF" name="insertBook" comment="inserts a book in one of the 2 tables based on the cuckoo hashing .Returns true if operation suceeded or false if failed">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="u4GTM9KbnhxvB" type="uO0SD7bnloba4" direction="return"/>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="uKrcSGsE7LSWI" name="Book" visibility="private" type="u6yHMklaQV1C9" value=""/>
+      <packagedElement xmi:type="uml:Class" xmi:id="uRiPUuoFG68zv" name="book">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="uIV5vaDnG7tNW" name="Title" type="uC6bkHy6sRQWE"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="uNYVTeZDVzrTS" name="Author" type="uC6bkHy6sRQWE"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="uvhmcZ4AELjvU" name="Publisher" type="uC6bkHy6sRQWE"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="uUeMc6Ud8CXPl" name="Genre" type="uC6bkHy6sRQWE"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="uB4ShUo2fEf5d" name="year" type="uC6bkHy6sRQWE"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="uxvNidl9rx270" name="ISBN" type="uC6bkHy6sRQWE"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="u9OqplS31i4B9" name="cuckooHash">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="ughGUJuROH8h6" name="visited_table1" comment="@brief a temporary vector used to store the hashed indexes " visibility="private" ownerScope="classifier" type="uwfhmEf1PCA5p"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="u7Si71CfKTldv" name="visited_table2" visibility="private" ownerScope="classifier" type="uwfhmEf1PCA5p"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="uvzSF9JvAYwZ0" name="hash1" comment="@brief Calculating the hash value for the given book using the Cuckoo Hashing based on a random prime A&#10;@param bookName The book for which the hash value is to be calculated based on its title.&#10;@param size The size of the hash table to ensure the hash index will not exceed the bounds of hash table&#10;@return The hash value, which corresponds to the index in the hash table." ownerScope="classifier">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="uCtDZpOZ7YYEl" type="ulzW8lf2nmdDE" direction="return"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="uVuBNMtzGr5CB" name="bookName" visibility="private" type="uZg1YTbkE8udw" value=""/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="uIarb69OpsgWv" name="size" visibility="private" type="ulzW8lf2nmdDE" value=""/>
         </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="ub2hpBqKVb4bH" name="HashTable"/>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="uJ2n1YucYp1B8" name="calculateSlots">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="uMZJU3QXRjqiB" type="u2LTO0dxgAJCk" direction="return"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="ub8dbYXLXmupT" name="hash2" comment="@brief Calculating the hash value for the given book using the Cuckoo Hashing based on golden ratio PHI&#10;@param bookName The book for which the hash value is to be calculated based on its title.&#10;@param size The size of the hash table to ensure the hash index will not exceed the bounds of hash table&#10;@return The hash value, which corresponds to the index in the hash table." ownerScope="classifier">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="uTPJKbJNpDfVg" type="ulzW8lf2nmdDE" direction="return"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="u4EMwEw2RtZwk" name="bookName" visibility="private" type="uZg1YTbkE8udw" value=""/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="uclYXJli0VmZb" name="size" visibility="private" type="ulzW8lf2nmdDE" value=""/>
         </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="ukRI7iuZDlBiL" name="getNumberOfBooks">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="uItmSfbgjfuWA" type="u2LTO0dxgAJCk" direction="return"/>
-        </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="usDgcOWMixLAz" name="isEmpty">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="u0RsbkT9s3epk" type="uO0SD7bnloba4" direction="return"/>
-        </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="uysiJ3Wg8cBlX" name="printBooks"/>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="utkDK5Eze2Ljy" name="searchBook">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="uX6JDQ69XMocg" type="uO0SD7bnloba4" direction="return"/>
-        </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="uFp3zvuUwEHFE" name="updateBook">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="uvfUPBjwhzbf6" type="uO0SD7bnloba4" direction="return"/>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="uWuNcxXkODOki" name="Book" visibility="private" type="u6yHMklaQV1C9" value=""/>
-        </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="u8PiQR9kc54pa" name="deleteBook">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="uj26Ja7u6pSc1" type="uO0SD7bnloba4" direction="return"/>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="uIA5yqZ3sWtCy" name="Book" visibility="private" type="u6yHMklaQV1C9" value=""/>
-        </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="u1rH7IkfQIlXX" name="calculateLoadFactor">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="u5folnltzs6Mt" type="u0zqKUjtV1uJs" direction="return"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="uMMQ6pyBSTRUO" name="insert" comment="@brief Declaration of Cuckoo hashing&#10;@param table1 hash table 1 &#10;@param table2 hash table 2&#10;@param book the book to be hashed&#10;return true if operation suceeded or false if the tables need resize" ownerScope="classifier">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="u53A4PvNTJEwN" type="uvAt6nWjgw866" direction="return"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="uigPiySTaLY8b" name="table1" visibility="private" type="u8urmRaqstfXs" value=""/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="u1gpPqu3GL5oT" name="table2" visibility="private" type="u8urmRaqstfXs" value=""/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="u6Rpg9vdmXdkt" name="Book" visibility="private" type="urKptnhr2x8OZ" value=""/>
         </ownedOperation>
       </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="u2LTO0dxgAJCk" name="size_t"/>
-      <packagedElement xmi:type="uml:Class" xmi:id="uEb7mnd4N3aKV" name="vector"/>
-      <packagedElement xmi:type="uml:Class" xmi:id="u6yHMklaQV1C9" name="const book&amp;"/>
-      <packagedElement xmi:type="uml:Class" xmi:id="uDKwNvL4nqLn0" name="cuckooHash">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="uDKDVezBN8HuN" name="visited_table1" comment="a static vector used on cuckoo hash to keep track of the visited indices in order to detect cycles on hash table 1" visibility="private" type="uEb7mnd4N3aKV"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="ueTBOeIkKgSpp" name="visited_table2" comment="a static vector used on cuckoo hash to keep track of the visited indices in order to detect cycles on hash table 2" visibility="private" type="uEb7mnd4N3aKV"/>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="u7TzHirA9OaNe" name="hash1">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="us0sttOiLPROh" type="u2LTO0dxgAJCk" direction="return"/>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="uue40Hy0TdYx8" name="bookName" comment="The string to be hashed for hashtable 1 " visibility="private" type="uozc22MLpG2wR" value=""/>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="ujNENWaaPjSD8" name="size" comment="The size of hash table 1 (used on the hashing process)" visibility="private" type="u2LTO0dxgAJCk" value=""/>
+      <packagedElement xmi:type="uml:Class" xmi:id="ulzW8lf2nmdDE" name="size_t"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="ucaQvroMHwtGM" name="std" stereotype="class-or-package">
+        <packagedElement xmi:type="uml:Class" xmi:id="um0mP9VzPOzzh" name="vector"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="uV2C6cWOnJK1i" name="" client="u9OqplS31i4B9" supplier="ucaQvroMHwtGM"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="ue7h7O86Qxdb9" name="" client="u9OqplS31i4B9" supplier="uV2C6cWOnJK1i"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="uVQa2rMDXgbNA" name="" client="u9OqplS31i4B9" supplier="uRiPUuoFG68zv"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="u66AZCQihzZLd" name="" client="u9OqplS31i4B9" supplier="uV2C6cWOnJK1i"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="u4EWlFi36Cf2H" name="" client="u9OqplS31i4B9" supplier="uV2C6cWOnJK1i"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="uKW22HsRrtsJF" name="" client="u9OqplS31i4B9" supplier="ucaQvroMHwtGM"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="u1A23VyFrCkEA" name="" client="u9OqplS31i4B9" supplier="uV2C6cWOnJK1i"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="u7zUef4K0F1At" name="" client="u9OqplS31i4B9" supplier="uRiPUuoFG68zv"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="uKZlIZ43TPmNz" name="" client="u9OqplS31i4B9" supplier="uV2C6cWOnJK1i"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="uIFXTjA8RYRIA" name="" client="u9OqplS31i4B9" supplier="uV2C6cWOnJK1i"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="upVKdaKGtcKKO" name="" client="u9OqplS31i4B9" supplier="ulzW8lf2nmdDE"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="umMKA4XhodBNA" name="" client="u9OqplS31i4B9" supplier="uV2C6cWOnJK1i"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="ugyW6ueAeG6qQ" name="" client="u9OqplS31i4B9" supplier="uV2C6cWOnJK1i"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="uteE3uQeE3FNQ" name="" client="u9OqplS31i4B9" supplier="ulzW8lf2nmdDE"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="uRGEUCr8amlec" name="" client="u9OqplS31i4B9" supplier="uV2C6cWOnJK1i"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="ucT8VNlAF1YTp" name="HashTable">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="uLYoUzjMm9Vfq" name="table1" comment="Declaring the hash table as a vector of lists to store books with chaining for collision handling.&#10;we have 2 hash tables so we can apply the cuckoo hashing&#10;It is a more simplified version of hash table .since it doesnt use linked lists for chaining&#10;the reason behind that is because cuckoo hashing ensures that no chaining occurs so it would &#10;be over kill to add linked lists inside vector&#10;std::optional added for memory safety" visibility="private" type="uMIyaobOtxtlg"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="uSm7aAiXFQTpa" name="table2" visibility="private" type="uMIyaobOtxtlg"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="unLvnf8AaOVdg" name="_totalBooks" visibility="private" type="ulzW8lf2nmdDE"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="uoRD2tUCgcBfr" name="_loadFactor" visibility="private" type="uwULxdZ8d8Vob"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="u3uLXcHBLcs7K" name="_totalSlots" visibility="private" type="ulzW8lf2nmdDE"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="u1yRywwpxMApm" name="HashTable" stereotype="constructor"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="uQ7koyoCCihWG" name="insertBook" comment="@brief Inserts a book into the hash table.&#10;@param book The book to be inserted.&#10;@return True if the book was successfully inserted, false otherwise.">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="uePw4gsqgKKRM" type="uvAt6nWjgw866" direction="return"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="uBiyjKSKWKrZZ" name="Book" visibility="private" type="urKptnhr2x8OZ" value=""/>
         </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="ujHD29lB0bMs0" name="hash2">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="u1HFru5QflGtk" type="u2LTO0dxgAJCk" direction="return"/>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="uZdRbhWhWG69m" name="size" comment="The size of hash table 2 (used on the hashing process)" visibility="private" type="u2LTO0dxgAJCk" value=""/>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="uVEOwfH9HnvV8" name="bookName" comment="the string to be hashed into hash table 2" visibility="private" type="u2LTO0dxgAJCk" value=""/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="uc329XnGxig0Q" name="deleteBook" comment="@brief Deletes a book from the hash table.&#10;@param book The book to be deleted.&#10;@return True if the book was found and deleted, false otherwise.">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="uQuNeCN1ljJ0o" type="uvAt6nWjgw866" direction="return"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="uJXD9qG48PQpP" name="Book" visibility="private" type="urKptnhr2x8OZ" value=""/>
         </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="uxaYnx9mGLwff" name="insert" ownerScope="classifier">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="u2FhJYeFZ7SHz" type="uO0SD7bnloba4" direction="return"/>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="ud6Lecb4AIs8E" name="table1" comment="the first hash table to be used for cuckoo hashing" visibility="private" type="uEb7mnd4N3aKV" value=""/>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="uuBwbTRlf7UxV" name="table2" comment="the second hash table to be used for cuckoo hashing" visibility="private" type="uEb7mnd4N3aKV" value=""/>
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="uNeGcc2gi7jra" name="Book" comment="the book to be hashed " visibility="private" type="uDErjhQVjlikF" value=""/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="uhmD2OrqRd3v5" name="searchBook" comment="@brief Searches for a book in the hash table.&#10;@param book The book to search for.&#10;@return True if the book was found, false otherwise.">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="uheCxSyQHovrx" type="uvAt6nWjgw866" direction="return"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="uA3ryaFNm0T8R" name="Book" visibility="private" type="urKptnhr2x8OZ" value=""/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="u6Ek6cBWiqbqe" name="updateBook" comment="@brief Updates the information of an existing book in the hash table.&#10;@param book The book with updated details.&#10;@return True if the update was successful, false otherwise.">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="u2kMGBBE0mmMq" type="uvAt6nWjgw866" direction="return"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="u5BiWKuBC9BXJ" name="Book" visibility="private" type="urKptnhr2x8OZ" value=""/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="uOHd9ybUXS5qZ" name="printBooks" comment="@brief Prints all books stored in the hash table."/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="urdMiYee9sAFs" name="isEmpty" comment="@brief Checks if the hash table is empty.&#10;@return True if the hash table is empty, false otherwise.">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="uYB6guRIUBzzK" type="uvAt6nWjgw866" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="upc5YdXhkw6bM" name="getNumberOfBooks" comment="@brief Gets the number of books currently stored in the hash table.&#10;&#10;This method returns the number of books stored in the hash table by accessing&#10;the `_totalBooks` variable. It provides an efficient way to retrieve the count&#10;of books without needing to iterate over the entire hash table.&#10;&#10;@return The total number of books in the hash table.">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="uK7NfkAItfe3g" type="ulzW8lf2nmdDE" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="uMsvyRY8tD5dd" name="calculateLoadFactor" comment="@brief Calculates the load factor of the hash table.&#10;The current load factor of the hash table, calculated as:&#10;_totalBooks / _numberOfSlots.&#10;@return _loadFactor">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="uktBGNhb4zjLJ" type="uwULxdZ8d8Vob" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="uDnTJazzVpeX1" name="calculateSlots" comment="@brief Calculates the total number of slots&#10;@return _totalSlots">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="uWldJL8KKVhsb" type="ulzW8lf2nmdDE" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="uZ5xlUc3Y2CcI" name="getTable1" comment="@brief getter for hashtables &#10;@return the hash table declared as a vector">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="ufqLmGssjTiOc" type="uR29rNtPiVXR3" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="usezDjMa78Ccc" name="getTable2" comment="@brief getter for hashtables &#10;@return the hash table declared as a vector">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="uhN6B5mKkQYrU" type="uR29rNtPiVXR3" direction="return"/>
         </ownedOperation>
       </packagedElement>
-      <packagedElement xmi:type="uml:Class" xmi:id="uDErjhQVjlikF" name="book">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="ugRDvoYL2gl9P" name="Title" type="uozc22MLpG2wR"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="ucVXa5sOdZSaE" name="Author" type="uozc22MLpG2wR"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="uIdx1KwECXwqY" name="Publisher" type="uozc22MLpG2wR"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="uvhEQ6iz63b0P" name="Genre" type="uozc22MLpG2wR"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="uMALi1N0wtbSl" name="Year" type="uozc22MLpG2wR"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="uxVZv9sJ4rSZq" name="ISBN" type="uozc22MLpG2wR"/>
-      </packagedElement>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="usdiFNB3DXnh9" name="" client="ucT8VNlAF1YTp" supplier="uV2C6cWOnJK1i"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="uGRs5wWmfunfR" name="" client="ucT8VNlAF1YTp" supplier="uRiPUuoFG68zv"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="uLcFxcnNk3KCK" name="" client="ucT8VNlAF1YTp" supplier="uV2C6cWOnJK1i"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="uKG4gJhDdjzLS" name="" client="ucT8VNlAF1YTp" supplier="uV2C6cWOnJK1i"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="us4TZLUFsv3B9" name="" client="ucT8VNlAF1YTp" supplier="uRiPUuoFG68zv"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="uJZhCPjfeObof" name="" client="ucT8VNlAF1YTp" supplier="uV2C6cWOnJK1i"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="uacFXMfxbow4R" name="" client="ucT8VNlAF1YTp" supplier="uV2C6cWOnJK1i"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="uuC6H0N3RRIzT" name="" client="ucT8VNlAF1YTp" supplier="ucaQvroMHwtGM"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="umM6GcwZiaVGZ" name="" client="ucT8VNlAF1YTp" supplier="uV2C6cWOnJK1i"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="u05ZjBxgVF0SW" name="" client="ucT8VNlAF1YTp" supplier="uRiPUuoFG68zv"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="uJMSnYlOdnLkX" name="" client="ucT8VNlAF1YTp" supplier="uV2C6cWOnJK1i"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="u0mMBg8FrtMX5" name="" client="ucT8VNlAF1YTp" supplier="uV2C6cWOnJK1i"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="uNeRVKK6H5e3w" name="" client="ucT8VNlAF1YTp" supplier="ucaQvroMHwtGM"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="uvWPk4oyEibRc" name="" client="ucT8VNlAF1YTp" supplier="uV2C6cWOnJK1i"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="ueM6lAUNYR7uV" name="" client="ucT8VNlAF1YTp" supplier="uRiPUuoFG68zv"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="uhjcvwzAhpmoh" name="" client="ucT8VNlAF1YTp" supplier="uV2C6cWOnJK1i"/>
       <xmi:Extension extender="umbrello">
         <diagrams resolution="96">
-          <diagram xmi.id="uAZCnYFkaN1cg" name="LibraryManagementSystem" type="1" documentation="" backgroundcolor="#ffffff" fillcolor="#ffffc0" font="Cascadia Code Bold,10,-1,5,50,0,0,0,0,0" griddotcolor="#d3d3d3" linecolor="#990000" linewidth="0" textcolor="#000000" usefillcolor="1" showattribassocs="1" showatts="1" showattsig="1" showops="1" showopsig="1" showpackage="1" showpubliconly="0" showscope="1" showstereotype="2" localid="-1" showgrid="0" snapgrid="0" snapcsgrid="0" snapx="25" snapy="25" zoom="98.2987" canvasheight="800" canvaswidth="1100" isopen="1">
+          <diagram xmi.id="uIXgTnPZk2moB" name="class diagram" type="1" documentation="" backgroundcolor="#ffffff" fillcolor="#ffffc0" font="Cascadia Code,11,-1,5,50,0,0,0,0,0" griddotcolor="#d3d3d3" linecolor="#990000" linewidth="0" textcolor="#000000" usefillcolor="1" showattribassocs="1" showatts="1" showattsig="1" showops="1" showopsig="1" showpackage="1" showpubliconly="0" showscope="1" showstereotype="2" localid="-1" showgrid="0" snapgrid="0" snapcsgrid="0" snapx="25" snapy="25" zoom="64.3634" canvasheight="800" canvaswidth="1100" isopen="1">
             <widgets>
-              <classwidget xmi.id="uDKwNvL4nqLn0" localid="uGMSTIeL5pbcD" textcolor="#000000" linecolor="#000000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="0" usesdiagramusefillcolor="0" fillcolor="#4e888d" font="Cascadia Code Bold,10,-1,5,50,0,0,0,0,0" autoresize="0" x="636.835" y="130.215" width="355.535" height="367.642" isinstance="0" showstereotype="2" showoperations="1" showpubliconly="0" showopsigs="601" showpackage="1" showscope="1" showattributes="1" showattsigs="601"/>
-              <classwidget xmi.id="uHr7DglCqVlwo" localid="uT2Svk5ZvzpXi" textcolor="#000000" linecolor="#000000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="0" usesdiagramusefillcolor="0" fillcolor="#99c1f1" font="Cascadia Code Bold,10,-1,5,50,0,0,0,0,0" autoresize="0" x="138.142" y="134.736" width="353" height="363.624" isinstance="0" showstereotype="2" showoperations="1" showpubliconly="0" showopsigs="601" showpackage="1" showscope="1" showattributes="1" showattsigs="601"/>
-              <classwidget xmi.id="uDErjhQVjlikF" localid="uHAfQJyAhNWym" textcolor="#000000" linecolor="#000000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="0" usesdiagramusefillcolor="0" fillcolor="#f6d32d" font="Cascadia Code Bold,10,-1,5,50,0,0,0,0,0" autoresize="0" x="428.287" y="562.571" width="364.452" height="199.787" isinstance="0" showstereotype="2" showoperations="1" showpubliconly="0" showopsigs="601" showpackage="1" showscope="1" showattributes="1" showattsigs="601"/>
+              <classwidget xmi.id="u9OqplS31i4B9" localid="uMDbltY6wRa2a" textcolor="#000000" linecolor="#241f31" linewidth="0" usefillcolor="1" usesdiagramfillcolor="0" usesdiagramusefillcolor="0" fillcolor="#2ec27e" font="Cascadia Code,20,-1,5,50,0,0,0,0,0" autoresize="0" x="-537.28" y="677.305" width="2201.29" height="218.233" isinstance="0" showstereotype="2" showoperations="1" showpubliconly="0" showopsigs="601" showpackage="1" showscope="1" showattributes="1" showattsigs="601"/>
+              <classwidget xmi.id="ucT8VNlAF1YTp" localid="u5bkd2eDOR9YV" textcolor="#000000" linecolor="#241f31" linewidth="0" usefillcolor="1" usesdiagramfillcolor="0" usesdiagramusefillcolor="0" fillcolor="#3584e4" font="Cascadia Code,20,-1,5,50,0,0,0,0,0" autoresize="0" x="-559.635" y="-21.5184" width="830.651" height="614.382" isinstance="0" showstereotype="2" showoperations="1" showpubliconly="0" showopsigs="601" showpackage="1" showscope="1" showattributes="1" showattsigs="601"/>
+              <classwidget xmi.id="uRiPUuoFG68zv" localid="uCBL7jC913UZ2" textcolor="#000000" linecolor="#241f31" linewidth="0" usefillcolor="1" usesdiagramfillcolor="0" usesdiagramusefillcolor="0" fillcolor="#f66151" font="Cascadia Code,20,-1,5,50,0,0,0,0,0" autoresize="0" x="582.629" y="-6.21471" width="492.074" height="257.09" isinstance="0" showstereotype="2" showoperations="1" showpubliconly="0" showopsigs="601" showpackage="1" showscope="1" showattributes="1" showattsigs="601"/>
             </widgets>
             <messages/>
-            <associations/>
+            <associations>
+              <assocwidget xmi.id="uVQa2rMDXgbNA" localid="uzOlqbTMl8y1q" textcolor="none" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font="Cascadia Code,11,-1,5,50,0,0,0,0,0" autoresize="1" seqnum="" type="502" widgetaid="u9OqplS31i4B9" widgetbid="uRiPUuoFG68zv" indexa="0" totalcounta="0" indexb="0" totalcountb="0">
+                <linepath layout="Direct">
+                  <startpoint startx="606.957" starty="677.305"/>
+                  <endpoint endx="777.313" endy="250.876"/>
+                </linepath>
+              </assocwidget>
+              <assocwidget xmi.id="uGRs5wWmfunfR" localid="uYnG3HGmDPGzc" textcolor="none" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font="Cascadia Code,11,-1,5,50,0,0,0,0,0" autoresize="1" seqnum="" type="502" widgetaid="ucT8VNlAF1YTp" widgetbid="uRiPUuoFG68zv" indexa="0" totalcounta="0" indexb="0" totalcountb="0">
+                <linepath layout="Direct">
+                  <startpoint startx="271.016" starty="215.948"/>
+                  <endpoint endx="582.629" endy="163.635"/>
+                </linepath>
+              </assocwidget>
+            </associations>
           </diagram>
         </diagrams>
       </xmi:Extension>
     </packagedElement>
     <packagedElement xmi:type="uml:Model" xmi:id="Use_Case_View" name="Use Case View"/>
-    <packagedElement xmi:type="uml:Model" xmi:id="Component_View" name="Component View"/>
+    <packagedElement xmi:type="uml:Model" xmi:id="Component_View" name="Component View">
+      <uml:Package xmi:id="uYJhn3e9rywqW" name="/home/konstantinosrammos/Documents/LibraryManagement" stereotype="folder">
+        <uml:Package xmi:id="u0zcPwlhx6CBH" name="include" stereotype="folder">
+          <packagedElement xmi:type="uml:Artifact" xmi:id="uXMqvBFi2KVfv" name="book.hpp" drawas="1"/>
+          <packagedElement xmi:type="uml:Artifact" xmi:id="uKiLG7BPAVLIe" name="Color.hpp" drawas="1"/>
+          <packagedElement xmi:type="uml:Artifact" xmi:id="uzZkFYtNhqDzk" name="cuckoo.hpp" drawas="1"/>
+          <packagedElement xmi:type="uml:Artifact" xmi:id="udOc4oGirvlF2" name="HashTable.hpp" drawas="1"/>
+        </uml:Package>
+      </uml:Package>
+    </packagedElement>
     <packagedElement xmi:type="uml:Model" xmi:id="Deployment_View" name="Deployment View"/>
     <packagedElement xmi:type="uml:Model" xmi:id="Entity_Relationship_Model" name="Entity Relationship Model"/>
   </uml:Model>
   <xmi:Extension extender="umbrello">
-    <docsettings viewid="uAZCnYFkaN1cg" documentation="" uniqueid="uxVZv9sJ4rSZq"/>
+    <docsettings viewid="uIXgTnPZk2moB" documentation="" uniqueid="uYnG3HGmDPGzc"/>
     <listview>
       <listitem id="Views" type="800" open="1">
-        <listitem id="Component_View" type="821" open="1"/>
+        <listitem id="Component_View" type="821" open="1">
+          <listitem id="uYJhn3e9rywqW" type="820" open="0">
+            <listitem id="u0zcPwlhx6CBH" type="820" open="0">
+              <listitem id="uXMqvBFi2KVfv" type="824" open="0"/>
+              <listitem id="uKiLG7BPAVLIe" type="824" open="0"/>
+              <listitem id="uzZkFYtNhqDzk" type="824" open="0"/>
+              <listitem id="udOc4oGirvlF2" type="824" open="0"/>
+            </listitem>
+          </listitem>
+        </listitem>
         <listitem id="Deployment_View" type="827" open="1"/>
         <listitem id="Entity_Relationship_Model" type="836" open="1"/>
         <listitem id="Logical_View" type="801" open="1">
-          <listitem id="uDErjhQVjlikF" type="813" open="1">
-            <listitem id="ucVXa5sOdZSaE" type="814" open="0"/>
-            <listitem id="uvhEQ6iz63b0P" type="814" open="0"/>
-            <listitem id="uxVZv9sJ4rSZq" type="814" open="0"/>
-            <listitem id="uIdx1KwECXwqY" type="814" open="0"/>
-            <listitem id="ugRDvoYL2gl9P" type="814" open="0"/>
-            <listitem id="uMALi1N0wtbSl" type="814" open="0"/>
+          <listitem id="uRiPUuoFG68zv" type="813" open="0">
+            <listitem id="uNYVTeZDVzrTS" type="814" open="0"/>
+            <listitem id="uUeMc6Ud8CXPl" type="814" open="0"/>
+            <listitem id="uxvNidl9rx270" type="814" open="0"/>
+            <listitem id="uvhmcZ4AELjvU" type="814" open="0"/>
+            <listitem id="uIV5vaDnG7tNW" type="814" open="0"/>
+            <listitem id="uB4ShUo2fEf5d" type="814" open="0"/>
           </listitem>
-          <listitem id="u6yHMklaQV1C9" type="813" open="1"/>
-          <listitem id="uDKwNvL4nqLn0" type="813" open="1">
-            <listitem id="u7TzHirA9OaNe" type="815" open="0"/>
-            <listitem id="ujHD29lB0bMs0" type="815" open="0"/>
-            <listitem id="uxaYnx9mGLwff" type="815" open="0"/>
-            <listitem id="uDKDVezBN8HuN" type="814" open="0"/>
-            <listitem id="ueTBOeIkKgSpp" type="814" open="0"/>
+          <listitem id="uIXgTnPZk2moB" type="807" label="class diagram" open="0"/>
+          <listitem id="u9OqplS31i4B9" type="813" open="1">
+            <listitem id="uvzSF9JvAYwZ0" type="815" open="0"/>
+            <listitem id="ub8dbYXLXmupT" type="815" open="0"/>
+            <listitem id="uMMQ6pyBSTRUO" type="815" open="0"/>
+            <listitem id="ughGUJuROH8h6" type="814" open="0"/>
+            <listitem id="u7Si71CfKTldv" type="814" open="0"/>
           </listitem>
           <listitem id="Datatypes" type="830" open="0">
-            <listitem id="uO0SD7bnloba4" type="829" open="0"/>
-            <listitem id="ui1SXjAmbG0h8" type="829" open="0"/>
-            <listitem id="u0zqKUjtV1uJs" type="829" open="0"/>
-            <listitem id="upEgfR0djj4oe" type="829" open="0"/>
-            <listitem id="uYXoNF3m2Xu8V" type="829" open="0"/>
-            <listitem id="uHfhydah6VzTK" type="829" open="0"/>
-            <listitem id="uGlxRIhgeOVVT" type="829" open="0"/>
-            <listitem id="ubJtwsHLiu95t" type="829" open="0"/>
-            <listitem id="uADGRSrGUqBE8" type="829" open="0"/>
-            <listitem id="uI0KQUeI7kfQe" type="829" open="0"/>
-            <listitem id="utNrRChBWF10z" type="829" open="0"/>
-            <listitem id="uGUQEt51hhDxe" type="829" open="0"/>
-            <listitem id="uozc22MLpG2wR" type="829" open="0"/>
-            <listitem id="uO7DVkAJyjux0" type="829" open="0"/>
-            <listitem id="u5z5pmsi36igy" type="829" open="0"/>
-            <listitem id="uafrHKwRsafEF" type="829" open="0"/>
-            <listitem id="um4cjrPqAFjBs" type="829" open="0"/>
-            <listitem id="unxVR2eCfCQFf" type="829" open="0"/>
+            <listitem id="uvAt6nWjgw866" type="829" open="0"/>
+            <listitem id="urKptnhr2x8OZ" type="829" open="0"/>
+            <listitem id="uZg1YTbkE8udw" type="829" open="0"/>
+            <listitem id="uwULxdZ8d8Vob" type="829" open="0"/>
+            <listitem id="uMRRHZIhDX7ya" type="829" open="0"/>
+            <listitem id="uiEPOQm7bP26v" type="829" open="0"/>
+            <listitem id="uY6Meat9ymuMf" type="829" open="0"/>
+            <listitem id="uDgSXV8Vbzmfz" type="829" open="0"/>
+            <listitem id="uMS7Q1FXbY3kt" type="829" open="0"/>
+            <listitem id="uRq15hAInvUMO" type="829" open="0"/>
+            <listitem id="uBjaTBtSPgYKC" type="829" open="0"/>
+            <listitem id="uR29rNtPiVXR3" type="829" open="0"/>
+            <listitem id="uwfhmEf1PCA5p" type="829" open="0"/>
+            <listitem id="uMIyaobOtxtlg" type="829" open="0"/>
+            <listitem id="u8urmRaqstfXs" type="829" open="0"/>
+            <listitem id="uC6bkHy6sRQWE" type="829" open="0"/>
+            <listitem id="uJhzanccLmKO2" type="829" open="0"/>
+            <listitem id="uNPkIBTEwIpf3" type="829" open="0"/>
+            <listitem id="u6FloXuw2MCVd" type="829" open="0"/>
+            <listitem id="ufVjBgA6ii9bg" type="829" open="0"/>
+            <listitem id="uMeD9MkOgZ7Qq" type="829" open="0"/>
           </listitem>
-          <listitem id="uHr7DglCqVlwo" type="813" open="0">
-            <listitem id="u5vgChRsjtsZw" type="814" open="0"/>
-            <listitem id="ucuymSgMDs4Sv" type="814" open="0"/>
-            <listitem id="ugagUsH4GSi14" type="814" open="0"/>
-            <listitem id="u1rH7IkfQIlXX" type="815" open="0"/>
-            <listitem id="uJ2n1YucYp1B8" type="815" open="0"/>
-            <listitem id="u8PiQR9kc54pa" type="815" open="0"/>
-            <listitem id="ukRI7iuZDlBiL" type="815" open="0"/>
-            <listitem id="ub2hpBqKVb4bH" type="815" open="0"/>
-            <listitem id="uDXJFArh9f3EF" type="815" open="0"/>
-            <listitem id="usDgcOWMixLAz" type="815" open="0"/>
-            <listitem id="uysiJ3Wg8cBlX" type="815" open="0"/>
-            <listitem id="utkDK5Eze2Ljy" type="815" open="0"/>
-            <listitem id="uRAMAuQJzXLob" type="814" open="0"/>
-            <listitem id="uYpyPNeoEhdeo" type="814" open="0"/>
-            <listitem id="uFp3zvuUwEHFE" type="815" open="0"/>
+          <listitem id="ucT8VNlAF1YTp" type="813" open="1">
+            <listitem id="uoRD2tUCgcBfr" type="814" open="0"/>
+            <listitem id="unLvnf8AaOVdg" type="814" open="0"/>
+            <listitem id="u3uLXcHBLcs7K" type="814" open="0"/>
+            <listitem id="uMsvyRY8tD5dd" type="815" open="0"/>
+            <listitem id="uDnTJazzVpeX1" type="815" open="0"/>
+            <listitem id="uc329XnGxig0Q" type="815" open="0"/>
+            <listitem id="upc5YdXhkw6bM" type="815" open="0"/>
+            <listitem id="uZ5xlUc3Y2CcI" type="815" open="0"/>
+            <listitem id="usezDjMa78Ccc" type="815" open="0"/>
+            <listitem id="u1yRywwpxMApm" type="815" open="0"/>
+            <listitem id="uQ7koyoCCihWG" type="815" open="0"/>
+            <listitem id="urdMiYee9sAFs" type="815" open="0"/>
+            <listitem id="uOHd9ybUXS5qZ" type="815" open="0"/>
+            <listitem id="uhmD2OrqRd3v5" type="815" open="0"/>
+            <listitem id="uLYoUzjMm9Vfq" type="814" open="0"/>
+            <listitem id="uSm7aAiXFQTpa" type="814" open="0"/>
+            <listitem id="u6Ek6cBWiqbqe" type="815" open="0"/>
           </listitem>
-          <listitem id="uAZCnYFkaN1cg" type="807" label="LibraryManagementSystem" open="0"/>
-          <listitem id="u2LTO0dxgAJCk" type="813" open="1"/>
-          <listitem id="uEb7mnd4N3aKV" type="813" open="1"/>
+          <listitem id="ulzW8lf2nmdDE" type="813" open="0"/>
+          <listitem id="ucaQvroMHwtGM" type="813" open="0">
+            <listitem id="um0mP9VzPOzzh" type="813" open="0"/>
+          </listitem>
         </listitem>
         <listitem id="Use_Case_View" type="802" open="1"/>
       </listitem>
