@@ -1,9 +1,11 @@
 #pragma once
+#include "Color.hpp"
 #include "HashTable.hpp"
 #include <string>
 #include <cmath>
 #include <vector>
 #include <optional>
+#include <iostream>
 #define A 199 //random prime number
 #define PHI 1.618 // golden ratio value
 
@@ -32,9 +34,10 @@ class cuckooHash{
      * @param table1 hash table 1 
      * @param table2 hash table 2
      * @param book the book to be hashed
+     * @param field the field that we are going to use for hashing
      * return true if operation suceeded or false if the tables need resize
      */
-    static bool insert(std::vector<std::optional <book>>& table1,std::vector<std::optional<book>>& table2,const book &Book);
+    static bool insert(std::vector<std::optional <book>>& table1,std::vector<std::optional<book>>& table2,const book &Book,const BookField field);
     private:
     /**
      * @brief a temporary vector used to store the hashed indexes 
