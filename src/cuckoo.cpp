@@ -3,28 +3,28 @@
 std::vector<size_t> cuckooHash::visited_table1;
 std::vector<size_t> cuckooHash::visited_table2;
 
-size_t cuckooHash::hash1(const std::string& bookName,size_t table_size)
+size_t cuckooHash::hash1(const std::string& str,size_t table_size)
 {
     size_t key = 0;
-    size_t stringSize = bookName.size();
+    size_t stringSize = str.size();
     //iterate over the string and calculate its alphanumeric value
     for(int i = 0; i < stringSize; i++)
     {
-        key += bookName[i];
+        key += str[i];
     }
 
     return static_cast<size_t>(key % A) % table_size;
 }
 
 
-size_t cuckooHash::hash2(const std::string& bookName,size_t table_size)
+size_t cuckooHash::hash2(const std::string& str,size_t table_size)
 {
     size_t key = 0;
-    size_t stringSize = bookName.size();
+    size_t stringSize = str.size();
     //iterate over the string and calculate its alphanumeric value
     for(int i = 0; i < stringSize; i++)
     {
-        key += bookName[i];
+        key += str[i];
     }
 
     //multiplication by golden ratio
@@ -54,6 +54,17 @@ bool cuckooHash::insert(std::vector<std::optional<book>>& table1, std::vector<st
     } else {
         std::cerr << COLOR_ERROR << "[ERROR] Unknown field: " << field << RESET << std::endl;
         return false;  // Invalid field, return false
+    }
+
+
+
+
+    //just one more check to see if the field is empty to avoid inserting it 
+    if(fieldValue.empty())
+    {
+        std::cerr << COLOR_INFO << "[INFO] Missing Field will be skipped" << RESET << std::endl;
+        //break the method here and return true to not trigger a resize of the table as it would happen by returning false
+        return true;
     }
 
     // Hash books using the selected field value

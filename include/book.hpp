@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-
+#define numberOfFields 6 // number of fields used currently for each book
 
 /**
  * @struct book
