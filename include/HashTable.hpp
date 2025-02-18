@@ -1,5 +1,6 @@
 #pragma once
 #include "book.hpp"
+#include "Library.hpp"
 #include <list>
 #include <vector>
 #include <array>
@@ -15,6 +16,12 @@
 class HashTable
 {
     public:
+    /**
+     * @brief set Library as friend for easier acess to private members of Hash table
+     * (to avoid creating multiple setters and getters)
+     */
+    
+    friend class Library;
     HashTable();
     /**
      * @brief Deletes a book from the hash table.
@@ -27,16 +34,6 @@ class HashTable
      */
         bool isEmpty();
 
-    /**
-     * @brief Gets the number of books currently stored in the hash table.
-     * 
-     * This method returns the number of books stored in the hash table by accessing
-     * the `_totalBooks` variable. It provides an efficient way to retrieve the count
-     * of books without needing to iterate over the entire hash table.
-     * 
-     * @return The total number of books in the hash table.
-     */
-        size_t getNumberOfBooks();
     /**
      * @brief Calculates the load factor of the hash table.
      * The current load factor of the hash table, calculated as:

@@ -2,6 +2,7 @@
 #include <string>
 #define numberOfFields 6 // number of fields used currently for each book
 
+
 /**
  * @struct book
  * @brief Represents a book with its attributes.
