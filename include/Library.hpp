@@ -2,19 +2,37 @@
 #include "Color.hpp"
 #include "cuckoo.hpp"
 #include "HashTable.hpp"
+#include <vector>
 #include <array>
-
-
+#include <fstream>
+#include <sstream>
+#include <iostream>
+#include <string>
+#define MISSING_FIELD ""
 
 
 class Library{
     public:
+        Library();//Constructor 
+        //implement load from file 
 
         //implement search
         //implement delete
         //implement insert
         //implement sort by field
-        
+
+
+        /**
+         * @brief print the held books of user
+         */
+
+        void printBooks();
+
+
+        /**
+         * @brief overloaded std::ostream for custom printing format with books
+         */
+        friend std::ostream& operator<<(std::ostream& os, const std::vector<book>& books);
     private:
         /**
          * @brief an array of hash tables based on the number of fields of the book defined in book.hpp
@@ -25,4 +43,11 @@ class Library{
          * without messing with the multiple hash tables
          */
         std::vector<book> books_held;
+
+        /**
+         * @brief load all books from a file 
+         * Declared as private since im going to call the method inside the constructor
+         * called Library.txt
+         */
+        bool loadLibrary();
 };

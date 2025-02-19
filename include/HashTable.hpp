@@ -1,6 +1,5 @@
 #pragma once
 #include "book.hpp"
-#include "Library.hpp"
 #include <list>
 #include <vector>
 #include <array>
@@ -12,6 +11,10 @@
  * 
  * This Class provides CRUD operations for managing books using a hash table.
  */
+
+ //Library class is defined in Library.hpp . Just redefined here so we can set it as a friend to HashTable
+ class Library;
+
 
 class HashTable
 {
