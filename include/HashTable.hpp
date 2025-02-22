@@ -52,9 +52,12 @@ class HashTable
         size_t calculateSlots();
 
     /**
-     * @brief resizes the hash tables if load factor is bigger than 0.75
+     * @brief resizes the hash tables if load factor is bigger than 0.75 
+     * @param cycle used to determine if resize needed due to hashing.By default its false
+     * 
      */
-    void resize();
+    void resize(bool cycle=false);
+
     
 
     /**

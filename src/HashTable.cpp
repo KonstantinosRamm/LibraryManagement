@@ -47,9 +47,11 @@ size_t HashTable::calculateSlots()
     return this->_totalSlots;
 }
 
-void HashTable::resize()
+void HashTable::resize(bool cycle)
 {
-    if (calculateLoadFactor() > 0.75)
+    //cycle is used as a second parameter since cuckoo hash will resize the table based on
+    //cycles and not in load Factor
+    if ((calculateLoadFactor() > 0.75) || cycle)
     {
         this->table1.resize(2*this->table1.size());
         this->table2.resize(2*this->table2.size());
@@ -58,6 +60,7 @@ void HashTable::resize()
         calculateSlots();
     }
 }
+
 
 //setters and getters
 

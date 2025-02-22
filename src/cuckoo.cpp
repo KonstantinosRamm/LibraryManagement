@@ -58,14 +58,10 @@ bool cuckooHash::insert(HashTable &library, const book &Book, const BookField fi
         return false;  // Invalid field, return false
     }
 
-
-
-
-    //just one more check to see if the field is empty to avoid inserting it 
-    if(fieldValue.empty())
-    {
+    // Just one more check to see if the field is empty to avoid inserting it
+    if (fieldValue.empty()) {
         std::cerr << COLOR_INFO << "[INFO] Missing Field will be skipped" << RESET << std::endl;
-        //break the method here and return true to not trigger a resize of the table as it would happen by returning false
+        // Break the method here and return true to not trigger a resize of the table as it would happen by returning false
         return true;
     }
 
@@ -73,14 +69,20 @@ bool cuckooHash::insert(HashTable &library, const book &Book, const BookField fi
     index1 = hash1(fieldValue, table1.size());
     index2 = hash2(fieldValue, table2.size());
 
+    // Ensure the indices are within bounds
+    if (index1 >= table1.size() || index2 >= table2.size()) {
+        std::cerr << "[ERROR] Hash index out of bounds!" << std::endl;
+        return false;  // Invalid index, return false
+    }
+
+    // Prevent infinite recursion with proper cycle detection
     for (int i = 0; i < cuckooHash::visited_table1.size(); i++) {
         if (cuckooHash::visited_table1[i] == index1) {
             cuckooHash::visited_table1.clear();
             cuckooHash::visited_table2.clear();
-            //resize tables and continue cuckoo hashing
-            /* Apply resize  */
-            library.resize();
-            return insert(library, Book, field); // Cycle detected in table1
+            // Resize tables and continue cuckoo hashing
+            library.resize(true);
+            return insert(library, Book, field);  // Cycle detected in table1
         }
     }
 
@@ -88,8 +90,8 @@ bool cuckooHash::insert(HashTable &library, const book &Book, const BookField fi
         if (cuckooHash::visited_table2[i] == index2) {
             cuckooHash::visited_table1.clear();
             cuckooHash::visited_table2.clear();
-            library.resize();
-            return insert(library, Book, field); // Cycle detected in table2
+            library.resize(true);
+            return insert(library, Book, field);  // Cycle detected in table2
         }
     }
 
@@ -132,3 +134,4 @@ bool cuckooHash::insert(HashTable &library, const book &Book, const BookField fi
 
     return result;
 }
+
