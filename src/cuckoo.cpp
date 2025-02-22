@@ -33,9 +33,11 @@ size_t cuckooHash::hash2(const std::string& str,size_t table_size)
 }
 
 
-bool cuckooHash::insert(std::vector<std::optional<book>>& table1, std::vector<std::optional<book>>& table2, const book &Book, const BookField field)
+bool cuckooHash::insert(HashTable &library, const book &Book, const BookField field)
 {
     size_t index1, index2;
+    std::vector<std::optional<book>>& table1 = library.getTable1();
+    std::vector<std::optional<book>>& table2 = library.getTable2();
 
     // Select the appropriate field value to hash
     std::string fieldValue;
@@ -71,11 +73,12 @@ bool cuckooHash::insert(std::vector<std::optional<book>>& table1, std::vector<st
     index1 = hash1(fieldValue, table1.size());
     index2 = hash2(fieldValue, table2.size());
 
-    // Base case: check for cycle in table1 or table2
     for (int i = 0; i < cuckooHash::visited_table1.size(); i++) {
         if (cuckooHash::visited_table1[i] == index1) {
             cuckooHash::visited_table1.clear();
             cuckooHash::visited_table2.clear();
+            //resize tables and continue cuckoo hashing
+            /* Apply resize  */
             return false; // Cycle detected in table1
         }
     }
@@ -117,7 +120,7 @@ bool cuckooHash::insert(std::vector<std::optional<book>>& table1, std::vector<st
     table2[index2] = evictedBook;
 
     // Recursively try to insert the evicted book into table1
-    bool result = insert(table1, table2, evictedBookFromTable2, field);
+    bool result = insert(library, evictedBookFromTable2, field);
 
     // Clear the visited indices only when the insertion is successful
     if (result) {

@@ -55,7 +55,33 @@ class HashTable
      * @brief resizes the hash tables if load factor is bigger than 0.75
      */
     void resize();
-  
+    
+
+    /**
+     * @brief setter for table1
+     * @param t1 the vector we want to assigned in table 1 
+     */
+
+    void setTable1(std::vector<std::optional<book>> &t1) ;
+
+    /**
+     * @brief setter for table2
+     * @param t2 the vector we want to assigned in table 1 
+     * 
+     */
+    void setTable2(std::vector<std::optional<book>> &t2) ;
+
+
+    /**
+     * @brief getter for table1 
+    */
+
+    std::vector<std::optional<book>>& getTable1();
+
+    /**
+     * @brief getter for table2
+    */
+    std::vector<std::optional<book>>& getTable2();
 
     private:
         // Declaring the hash table as a vector of lists to store books with chaining for collision handling.

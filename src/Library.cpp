@@ -40,18 +40,18 @@ bool Library::loadLibrary()
 
 std::ostream& operator<<(std::ostream& os, const std::vector<book>& books)
 {
-    os << COLOR_INFO << "\t\tAuthor\t\tTitle\t\tPublisher\t\tGenre\t\tYear\t\tISBN" << RESET << std::endl;
+    os << COLOR_INFO << "\t\t\t\tAuthor\t\t\t\tTitle\t\t\t\tPublisher\t\t\t\tGenre\t\t\t\tYear\t\t\t\tISBN" << RESET << std::endl;
     size_t ctr = 1;
     for(book current : books)
     {
         os << COLOR_INFO << ctr << RESET;
         os << SUCESS_COLOR ;
-        os << "\t\t" << current.Author ;
-        os << "\t\t" << current.Title ;
-        os << "\t\t" << current.Publisher ;
-        os << "\t\t" << current.Genre ;
-        os << "\t\t" << current.Year ;
-        os << "\t\t" << current.ISBN ;
+        os << "\t\t\t\t" << current.Author ;
+        os << "\t\t\t\t" << current.Title ;
+        os << "\t\t\t\t" << current.Publisher ;
+        os << "\t\t\t\t" << current.Genre ;
+        os << "\t\t\t\t" << current.Year ;
+        os << "\t\t\t\t" << current.ISBN ;
         os << std::endl;
         ++ctr;
 

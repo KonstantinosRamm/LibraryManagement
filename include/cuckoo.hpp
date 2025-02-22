@@ -37,7 +37,7 @@ class cuckooHash{
      * @param field the field that we are going to use for hashing
      * return true if operation suceeded or false if the tables need resize
      */
-    static bool insert(std::vector<std::optional <book>>& table1,std::vector<std::optional<book>>& table2,const book &Book,const BookField field);
+    static bool insert(HashTable &library,const book &Book,const BookField field);
     private:
     /**
      * @brief a temporary vector used to store the hashed indexes 
