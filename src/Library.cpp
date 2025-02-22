@@ -38,22 +38,28 @@ bool Library::loadLibrary()
 }
 
 
-std::ostream& operator<<(std::ostream& os, const std::vector<book>& books)
+std::ostream& operator<<(std::ostream& os, const std::vector<std::optional<book>>& books)
 {
     os << COLOR_INFO << "\t\t\t\tAuthor\t\t\t\tTitle\t\t\t\tPublisher\t\t\t\tGenre\t\t\t\tYear\t\t\t\tISBN" << RESET << std::endl;
-    size_t ctr = 1;
-    for(book current : books)
+    
+    for(size_t i = 0; i < books.size(); i++)
     {
-        os << COLOR_INFO << ctr << RESET;
-        os << SUCESS_COLOR ;
-        os << "\t\t\t\t" << current.Author ;
-        os << "\t\t\t\t" << current.Title ;
-        os << "\t\t\t\t" << current.Publisher ;
-        os << "\t\t\t\t" << current.Genre ;
-        os << "\t\t\t\t" << current.Year ;
-        os << "\t\t\t\t" << current.ISBN ;
-        os << std::endl;
-        ++ctr;
+        //since we have std::optional type we have to check if the book has values in it (just to be pedantic)
+        if(books[i].has_value())
+        {
+            //declared as const since value() method will return a const object
+            const book& currentBook = books[i].value();
+            os << COLOR_INFO << i + 1 << RESET;
+            os << SUCESS_COLOR ;
+            os << "\t\t\t\t" << currentBook.Author ;
+            os << "\t\t\t\t" << currentBook.Title ;
+            os << "\t\t\t\t" << currentBook.Publisher ;
+            os << "\t\t\t\t" << currentBook.Genre ;
+            os << "\t\t\t\t" << currentBook.Year ;
+            os << "\t\t\t\t" << currentBook.ISBN ;
+            os << std::endl;
+        }
+
 
     }
     os << RESET << std::endl;
