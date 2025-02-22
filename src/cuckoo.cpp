@@ -79,7 +79,8 @@ bool cuckooHash::insert(HashTable &library, const book &Book, const BookField fi
             cuckooHash::visited_table2.clear();
             //resize tables and continue cuckoo hashing
             /* Apply resize  */
-            return false; // Cycle detected in table1
+            library.resize();
+            return insert(library, Book, field); // Cycle detected in table1
         }
     }
 
@@ -87,7 +88,8 @@ bool cuckooHash::insert(HashTable &library, const book &Book, const BookField fi
         if (cuckooHash::visited_table2[i] == index2) {
             cuckooHash::visited_table1.clear();
             cuckooHash::visited_table2.clear();
-            return false; // Cycle detected in table2
+            library.resize();
+            return insert(library, Book, field); // Cycle detected in table2
         }
     }
 

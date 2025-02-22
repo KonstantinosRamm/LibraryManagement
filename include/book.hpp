@@ -60,10 +60,10 @@ struct book
      * the hash table at which it will be stored
      */
 enum BookField {
-    ISBN,
-    Title,
+    Title = 0,
     Author,
     Publisher,
     Year,
     Genre,
+    ISBN,
 };

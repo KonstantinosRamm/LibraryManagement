@@ -40,7 +40,8 @@ bool Library::loadLibrary()
 
 std::ostream& operator<<(std::ostream& os, const std::vector<std::optional<book>>& books)
 {
-    os << COLOR_INFO << "\t\t\t\tAuthor\t\t\t\tTitle\t\t\t\tPublisher\t\t\t\tGenre\t\t\t\tYear\t\t\t\tISBN" << RESET << std::endl;
+    os << COLOR_INFO << "----------------------------------------------------------------------------------------------------------------------" << RESET << std::endl;
+
     
     for(size_t i = 0; i < books.size(); i++)
     {
@@ -51,12 +52,12 @@ std::ostream& operator<<(std::ostream& os, const std::vector<std::optional<book>
             const book& currentBook = books[i].value();
             os << COLOR_INFO << i + 1 << RESET;
             os << SUCESS_COLOR ;
-            os << "\t\t\t\t" << currentBook.Author ;
-            os << "\t\t\t\t" << currentBook.Title ;
-            os << "\t\t\t\t" << currentBook.Publisher ;
-            os << "\t\t\t\t" << currentBook.Genre ;
-            os << "\t\t\t\t" << currentBook.Year ;
-            os << "\t\t\t\t" << currentBook.ISBN ;
+            os << "\t" << currentBook.Author ;
+            os << "\t" << currentBook.Title ;
+            os << "\t" << currentBook.Publisher ;
+            os << "\t" << currentBook.Genre ;
+            os << "\t" << currentBook.Year ;
+            os << "\t" << currentBook.ISBN ;
             os << std::endl;
         }
 
@@ -69,7 +70,16 @@ std::ostream& operator<<(std::ostream& os, const std::vector<std::optional<book>
 }
 
 
+
 void Library::printBooks()
 {
     std::cout << this->books_held;
+}
+
+
+
+//getter
+std::vector<std::optional<book>> & Library::getBooksHeld()
+{
+    return this->books_held;
 }

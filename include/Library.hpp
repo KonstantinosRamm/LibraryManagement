@@ -38,6 +38,12 @@ class Library{
          * @brief overloaded std::ostream for custom printing format with books
          */
         friend std::ostream& operator<<(std::ostream& os, const std::vector<book>& books);
+
+        /**
+         * @brief getter for each HashTable
+         * @param field the field to get from
+         */
+        HashTable& getTable(BookField field) { return this->fieldTables[field]; };
     private:
         /**
          * @brief an array of hash tables based on the number of fields of the book defined in book.hpp
