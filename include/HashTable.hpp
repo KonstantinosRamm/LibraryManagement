@@ -65,26 +65,26 @@ class HashTable
      * @param t1 the vector we want to assigned in table 1 
      */
 
-    void setTable1(std::vector<std::optional<book>> &t1) ;
+    void setTable1(std::vector<book> &t1) ;
 
     /**
      * @brief setter for table2
      * @param t2 the vector we want to assigned in table 1 
      * 
      */
-    void setTable2(std::vector<std::optional<book>> &t2) ;
+    void setTable2(std::vector<book> &t2) ;
 
 
     /**
      * @brief getter for table1 
     */
 
-    std::vector<std::optional<book>>& getTable1();
+    std::vector<book>& getTable1();
 
     /**
      * @brief getter for table2
     */
-    std::vector<std::optional<book>>& getTable2();
+    std::vector<book>& getTable2();
 
     private:
         // Declaring the hash table as a vector of lists to store books with chaining for collision handling.
@@ -93,8 +93,8 @@ class HashTable
         // the reason behind that is because cuckoo hashing ensures that no chaining occurs so it would 
         //be over kill to add linked lists inside vector
         //std::optional added for memory safety
-        std::vector<std::optional<book>> table1;
-        std::vector<std::optional<book>> table2;
+        std::vector<book> table1;
+        std::vector<book> table2;
         size_t _totalBooks;
         double _loadFactor;
         size_t _totalSlots;

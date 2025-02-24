@@ -54,7 +54,7 @@ class Library{
          * @brief a vector with the books held to simplify the process of printing all the books currently held
          * without messing with the multiple hash tables
          */
-        std::vector<std::optional<book>> books_held;
+        std::vector<book> books_held;
 
 
         /**

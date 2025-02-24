@@ -18,51 +18,51 @@ bool Library::loadLibrary()
 
     std::string line;
     
-    while (std::getline(file, line)) // Read the first line (Author)
+    while (true) // Read the first line (Author)
     {
         book Book;
-        Book.Author = line; // Assign the first line to Author
-
-        // Read the remaining fields, checking if they exist
-        if (!std::getline(file, Book.Title))     Book.Title = MISSING_FIELD;
-        if (!std::getline(file, Book.Publisher)) Book.Publisher = MISSING_FIELD;
-        if (!std::getline(file, Book.Genre))     Book.Genre = MISSING_FIELD;
-        if (!std::getline(file, Book.Year))      Book.Year = MISSING_FIELD;
-        if (!std::getline(file, Book.ISBN))      Book.ISBN = MISSING_FIELD;
-
+        // Read all fields
+        for(int i = 0; i < numberOfFields; i++){
+        
+            std::getline(file,Book.fields[i]);
+            //exit if we reach the end of file 
+            if (file.eof()){
+                //ensure to add the book if it hash at least one field completed
+                if (i > 0) {
+                    this->books_held.push_back(Book); // Push the last book (if it has at least one field)
+                }
+                std::cout << SUCESS_COLOR << "[SUCESS] reading all books!" << RESET << std::endl;
+                file.close();
+                return true;
+            }
+        }
+    //push book to vector 
         this->books_held.push_back(Book);
+
     }
-    std::cout << SUCESS_COLOR << "[SUCESS] reading all books!" << RESET << std::endl;
-    file.close();
+
     return true; // Indicate success
 }
 
 
-std::ostream& operator<<(std::ostream& os, const std::vector<std::optional<book>>& books)
+std::ostream& operator<<(std::ostream& os, const std::vector<book>& books)
 {
     os << COLOR_INFO << "----------------------------------------------------------------------------------------------------------------------" << RESET << std::endl;
 
     
     for(size_t i = 0; i < books.size(); i++)
     {
-        //since we have std::optional type we have to check if the book has values in it (just to be pedantic)
-        if(books[i].has_value())
+        os << COLOR_INFO << i + 1 << RESET;
+        os << SUCESS_COLOR ;
+
+        //make a loop and print all fields
+        for(int j = 0; j < numberOfFields; j++)
         {
-            //declared as const since value() method will return a const object
-            const book& currentBook = books[i].value();
-            os << COLOR_INFO << i + 1 << RESET;
-            os << SUCESS_COLOR ;
-            os << "\t" << currentBook.Author ;
-            os << "\t" << currentBook.Title ;
-            os << "\t" << currentBook.Publisher ;
-            os << "\t" << currentBook.Genre ;
-            os << "\t" << currentBook.Year ;
-            os << "\t" << currentBook.ISBN ;
-            os << std::endl;
+            os << "\t" << books[i].fields[j];
         }
-
-
+        os << std::endl;
     }
+
     os << RESET << std::endl;
 
     return os;
@@ -73,13 +73,6 @@ std::ostream& operator<<(std::ostream& os, const std::vector<std::optional<book>
 
 void Library::printBooks()
 {
-    std::cout << this->books_held;
+    std::cout << books_held;
 }
 
-
-
-//getter
-std::vector<std::optional<book>> & Library::getBooksHeld()
-{
-    return this->books_held;
-}

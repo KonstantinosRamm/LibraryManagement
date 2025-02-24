@@ -64,13 +64,13 @@ void HashTable::resize(bool cycle)
 
 //setters and getters
 
-void HashTable::setTable1(std::vector<std::optional<book>> &t1) { this->table1 = t1;}
+void HashTable::setTable1(std::vector<book> &t1) { this->table1 = t1;}
 
-void HashTable::setTable2(std::vector<std::optional<book>> &t2) { this->table2 = t2;}
+void HashTable::setTable2(std::vector<book> &t2) { this->table2 = t2;}
 
-std::vector<std::optional<book>>& HashTable::getTable1() {return this->table1;}
+std::vector<book>& HashTable::getTable1() {return this->table1;}
 
-std::vector<std::optional<book>>& HashTable::getTable2() {return this->table2;}
+std::vector<book>& HashTable::getTable2() {return this->table2;}
 
 
 

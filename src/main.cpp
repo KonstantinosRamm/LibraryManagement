@@ -8,6 +8,8 @@
 
  
 int main(void){
+    Library test;
+    test.printBooks();
 
 }
 
