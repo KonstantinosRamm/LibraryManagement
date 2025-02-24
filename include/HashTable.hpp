@@ -27,36 +27,15 @@ class HashTable
     friend class Library;
     HashTable();
     /**
-     * @brief Deletes a book from the hash table.
-     * @param book The book to be deleted.
-     * @return True if the book was found and deleted, false otherwise.
-
-    /**
      * @brief Checks if the hash table is empty.
      * @return True if the hash table is empty, false otherwise.
      */
         bool isEmpty();
-
-    /**
-     * @brief Calculates the load factor of the hash table.
-     * The current load factor of the hash table, calculated as:
-     *         _totalBooks / _numberOfSlots.
-     * @return _loadFactor
-     */
-        double calculateLoadFactor();
-
-    /**
-     * @brief Calculates the total number of slots
-     * @return _totalSlots
-     */
-        size_t calculateSlots();
-
     /**
      * @brief resizes the hash tables if load factor is bigger than 0.75 
-     * @param cycle used to determine if resize needed due to hashing.By default its false
      * 
      */
-    void resize(bool cycle=false);
+        void resize();
 
     
 
@@ -95,10 +74,5 @@ class HashTable
         //std::optional added for memory safety
         std::vector<book> table1;
         std::vector<book> table2;
-        size_t _totalBooks;
-        double _loadFactor;
-        size_t _totalSlots;
-
-
 
 };
