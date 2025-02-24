@@ -58,21 +58,23 @@ class HashTable
      * @brief getter for table1 
     */
 
-    std::vector<book>& getTable1();
+    std::vector<size_t>& getTable1();
 
     /**
      * @brief getter for table2
     */
-    std::vector<book>& getTable2();
+    std::vector<size_t>& getTable2();
 
     private:
-        // Declaring the hash table as a vector of lists to store books with chaining for collision handling.
-        // we have 2 hash tables so we can apply the cuckoo hashing
-        // It is a more simplified version of hash table .since it doesnt use linked lists for chaining
-        // the reason behind that is because cuckoo hashing ensures that no chaining occurs so it would 
-        //be over kill to add linked lists inside vector
-        //std::optional added for memory safety
-        std::vector<book> table1;
-        std::vector<book> table2;
+
+
+    /**
+     * @brief table 1 used for cuckoo hashing .stores only the index of the vector where the string is 
+     */
+        std::vector<size_t> table1;
+    /**
+     * @brief table 2 used for cuckoo hashing .stores only the index of the vector where the string is 
+     */
+        std::vector<size_t> table2;
 
 };
