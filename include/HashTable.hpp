@@ -1,9 +1,15 @@
 #pragma once
-#include "book.hpp"
 #include <list>
 #include <vector>
 #include <array>
 #include <optional>
+#include <cmath>
+#include <string>
+#include <limits>
+#define A 10007 //random prime number
+#define PHI 1.618 // golden ratio value
+#define isEmpty std::numeric_limits<size_t>::max() // used as abstraction to determine the value inside a given table is empty or not
+#define tablesSize 2 // number of tables used in cuckoo hashing
 
 /**
  * @class HashTable
@@ -26,55 +32,129 @@ class HashTable
     
     friend class Library;
     HashTable();
-    /**
-     * @brief Checks if the hash table is empty.
-     * @return True if the hash table is empty, false otherwise.
-     */
-        bool isEmpty();
-    /**
-     * @brief resizes the hash tables if load factor is bigger than 0.75 
-     * 
-     */
-        void resize();
 
+
+
+
+
+
+
+
+
+
+    /*
+    
+    
+    
+    
+    
+                                        HASH FUNCTIONS AND CUCKOO HASHING
+                                        
+                                        
+                                        
+                                        
+                                        
+    */
+
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * @brief Declaration of Cuckoo hashing. It uses the internal hash tables (2 tables) store the index and resizes in case of a cycle occurs
+     * @param key string to be hashed
+     * @param table_id determine where we are cuckooing table1 or table2
+     * return true if operation suceeded or false if the tables need resize
+     */
+    bool cuckoo(const std::string& key);
+
+
+
+    void insert(const std::string& str);
     
 
-    /**
-     * @brief setter for table1
-     * @param t1 the vector we want to assigned in table 1 
-     */
-
-    void setTable1(std::vector<book> &t1) ;
-
-    /**
-     * @brief setter for table2
-     * @param t2 the vector we want to assigned in table 1 
-     * 
-     */
-    void setTable2(std::vector<book> &t2) ;
 
 
-    /**
-     * @brief getter for table1 
-    */
 
-    std::vector<size_t>& getTable1();
 
-    /**
-     * @brief getter for table2
-    */
-    std::vector<size_t>& getTable2();
+
+
+
+
+
+
+
+
+
 
     private:
 
 
     /**
-     * @brief table 1 used for cuckoo hashing .stores only the index of the vector where the string is 
+     * @brief vector of strings used to represent each field
      */
-        std::vector<size_t> table1;
+    std::vector<std::string> books;
+
     /**
-     * @brief table 2 used for cuckoo hashing .stores only the index of the vector where the string is 
+     * @brief array of 2 vectors (tables) used in cuckoo hashing
      */
-        std::vector<size_t> table2;
+        std::array<std::vector<size_t>, tablesSize> tables;
+
+
+
+    /**
+    * @brief a temporary vector1 used to store the hashed indexes 
+    */
+    std::vector<size_t> visited_table1;
+    /**
+    * @brief a temporary vector2 used to store the hashed indexes 
+    */
+    std::vector<size_t> visited_table2;
+
+
+
+
+
+    /**
+     * @brief if cycle found during cuckoo hash
+     * 
+     */
+    void resizeCuckoo();
+
+    /**
+     * @brief table id used on cuckoo hash and indicates which is the current table to be used for cuckoo
+     */
+    bool table_id;
+
+
+     /**
+     *  @brief Calculating the hash value for the given book using the Cuckoo Hashing based on a random prime A
+     *  @param str The str for which the hash value is to be calculated
+     *  @param size The size of the hash table to ensure the hash index will not exceed the bounds of hash table
+     *  @return The hash value, which corresponds to the index in the hash table.
+     */
+    size_t hash1(const std::string& str,size_t size) ;
+
+     /**
+     *  @brief Calculating the hash value for the given book using the Cuckoo Hashing based on golden ratio PHI
+     *  @param str The str for which the hash value is to be
+     *  @param size The size of the hash table to ensure the hash index will not exceed the bounds of hash table
+     *  @return The hash value, which corresponds to the index in the hash table.
+     */
+    size_t hash2(const std::string& str,size_t size);
+
+
+    
+
+
+
+
 
 };
